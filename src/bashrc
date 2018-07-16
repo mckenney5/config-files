@@ -88,7 +88,7 @@ fi
 # Most Used
 alias c='clear && ls'
 alias cls='clear'
-alias up='sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove && sudo apt-get autoclean && echo done'
+alias up='sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean && echo done'
 alias la='ls -a'
 alias poweroff='sudo poweroff'
 alias reboot='echo "Disabled for Toughbook, powering off instead." && sudo poweroff' #used for my toughbook
@@ -96,10 +96,10 @@ alias reboot='echo "Disabled for Toughbook, powering off instead." && sudo power
 alias pg='ping 8.8.8.8'
 alias ip='hostname -I'
 alias get='sudo apt install'
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade'
-alias remove='sudo apt-get autoremove'
-alias search='apt-cache search'
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'
+alias remove='sudo apt autoremove'
+alias search='apt search'
 
 # Less Used
 alias help='man builtins'
