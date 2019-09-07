@@ -1,8 +1,9 @@
-/* Parses acpi's out put returns the battery percentages */
+/* Parses acpi's output returns the battery percentages */
 #include <stdio.h>
 #define SIZE 100
 int main(){
-	size_t i, l=0;
+	size_t l=0;
+	int i;
 	char bat[SIZE] = {'\0'};
 	char inpt[SIZE] = {'\0'};
 	for(i=0; i < SIZE; i++){
@@ -17,8 +18,10 @@ int main(){
 				l++;
 			}
 			bat[l] = '%'; //do some nice formatting
-			bat[++l] = ' ';
-			bat[++l] = ' ';
+			if(!(l +2 >= SIZE)){
+				bat[++l] = ' ';
+				bat[++l] = ' ';
+			}
 		}
 	}
 	bat[l] = '\0'; //remove any extra spaces
