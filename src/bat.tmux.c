@@ -42,9 +42,9 @@ int main(){
 		else if(batlvl[i] <= LOW && nmembr == 0) //if the battery is low
 			printf("#[fg=%s]%d%s#[fg=%s]", LOW_COLOR, batlvl[i], "%!", NORMAL_COLOR);
 		else if(batlvl[i] <= MED && nmembr > 0) //if the battery is medium and theres another battery
-			printf("#[fg=%s]%d #[fg=%s]", MED_COLOR, batlvl[i], NORMAL_COLOR);
+			printf("#[fg=%s]%d%s #[fg=%s]", MED_COLOR, batlvl[i], "%", NORMAL_COLOR);
 		else if(batlvl[i] <= MED && nmembr == 0) //if the battery is medium
-			printf("#[fg=%s]%d#[fg=%s]", MED_COLOR, batlvl[i], NORMAL_COLOR);
+			printf("#[fg=%s]%d%s#[fg=%s]", MED_COLOR, batlvl[i], "%", NORMAL_COLOR);
 		else if(i+1 == nmembr)
 			printf("#[fg=%s]%d%s#[fg=%s]", GOOD_COLOR, batlvl[i], "%", NORMAL_COLOR);
 		else
