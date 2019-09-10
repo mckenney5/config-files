@@ -16,7 +16,7 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=100
+HISTSIZE=1000
 HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
@@ -72,69 +72,9 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+# get our aliases
+. ~/.bash_alias
 
-    alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
-fi
-
-# -- Start Aliases -- #
-# Most Used
-alias c='clear && ls'
-alias cls='clear'
-alias up='sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean && echo done'
-alias la='ls -a'
-alias poweroff='sudo poweroff'
-#alias reboot='echo "Disabled for Toughbook, powering off instead." && sudo poweroff' #used for my toughbook
-alias reboot='sudo reboot' #used for everything else, allowing non-root to shutdown is for losers
-alias pg='ping 8.8.8.8'
-alias ip='hostname -I'
-alias get='sudo apt install'
-alias update='sudo apt update'
-alias upgrade='sudo apt upgrade'
-alias remove='sudo apt autoremove'
-alias search='apt search'
-
-# Less Used
-alias os-gcc='$HOME/opt/cross/bin/i686-elf-gcc'
-alias help='man builtins'
-alias games='echo adventure, arithmetic, atc, backgammon, battlestar, bcd, boggle, caesar, canfield, countmail, cribbage, dab, go-fish, gomoku, hack, hangman, hunt, mille, monop, morse, number, pig, phantasia, pom, ppt, primes, quiz, random, rain, robots, rot13, sail, snake, tetris, trek, wargames, worm, worms, wump, wtf'
-alias search2='apropos'
-alias worms='worms -d 45' #see bsdgames
-alias ddg='w3m https://www.duckduckgo.com/html'
-alias ssh-on='sudo /etc/init.d/ssh start'
-alias ssh-off='sudo /etc/init.d/ssh stop'
-alias tor-on='sudo /etc/init.d/tor start'
-alias tor-off='sudo /etc/init.d/tor stop'
-alias install='dkpg -i'
-alias wlan='sudo nano /etc/network/interfaces'
-alias wlan2='sudo /etc/init.d/networking restart'
-alias pandora='pithos'
-#alias pandora2='pianobar' #doesnt work, RIP
-#alias disabletrackpad='xinput set-prop 10 "Device Enabled" 0' #used for my thinkpads
-alias e='espeak -s 130 '
-alias whosup='nmap -sn 192.168.1.1-255' #checks what computers on on the LAN (all my routers are 192.168.1.*)
-alias vlc2='vlc --qt-minimal-view --no-qt-system-tray' #works well with tiling window managers
-alias sc='neofetch --cpu_temp on && vrms | grep non-free && scrot -d 2'
-alias wiki='wikipedia2text -d w3m'
-alias av='echo Scanning... && sudo clamscan -i -r --stdout / >> ~/clamscan.log'
-alias sf='surf -G -a a -m -n'
-
-# -- End Aliases -- #
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
