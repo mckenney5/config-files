@@ -37,13 +37,13 @@ int main(){
 		}
 	}
 	for(i=0; i < nmembr; i++){ //display the data
-		if(batlvl[i] <= LOW && nmembr > 0) //if the battery is low and theres another battery
+		if(batlvl[i] <= LOW && i+1 != nmembr) //if the battery is low and theres another battery
 			printf("#[fg=%s]%d%s #[fg=%s]", LOW_COLOR, batlvl[i], "%!", NORMAL_COLOR);
-		else if(batlvl[i] <= LOW && nmembr == 0) //if the battery is low
+		else if(batlvl[i] <= LOW && i+1 == nmembr) //if the battery is low
 			printf("#[fg=%s]%d%s#[fg=%s]", LOW_COLOR, batlvl[i], "%!", NORMAL_COLOR);
-		else if(batlvl[i] <= MED && nmembr > 0) //if the battery is medium and theres another battery
+		else if(batlvl[i] <= MED && i+1 != nmembr) //if the battery is medium and theres another battery
 			printf("#[fg=%s]%d%s #[fg=%s]", MED_COLOR, batlvl[i], "%", NORMAL_COLOR);
-		else if(batlvl[i] <= MED && nmembr == 0) //if the battery is medium
+		else if(batlvl[i] <= MED && i+1 == nmembr) //if the battery is medium
 			printf("#[fg=%s]%d%s#[fg=%s]", MED_COLOR, batlvl[i], "%", NORMAL_COLOR);
 		else if(i+1 == nmembr)
 			printf("#[fg=%s]%d%s#[fg=%s]", GOOD_COLOR, batlvl[i], "%", NORMAL_COLOR);
