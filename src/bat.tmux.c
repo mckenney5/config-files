@@ -37,6 +37,7 @@ int main(){
 		}
 	}
 	for(i=0; i < nmembr; i++){ //display the data
+		if(batlvl[i] > 100) batlvl[i] /= 10; //fixes extra zero if bat0 is at 100%
 		if(batlvl[i] <= LOW && i+1 != nmembr) //if the battery is low and theres another battery
 			printf("#[fg=%s]%d%s #[fg=%s]", LOW_COLOR, batlvl[i], "%!", NORMAL_COLOR);
 		else if(batlvl[i] <= LOW && i+1 == nmembr) //if the battery is low
