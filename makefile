@@ -16,9 +16,6 @@ install: batlvl c2f
 	# Copying fonts
 	mkdir -p ~/.fonts
 	cp -vi src/fonts/* ~/.fonts/
-	# Copying i3 conf files
-	mkdir -p ~/.i3
-	cp -vi src/i3/* ~/.i3/
 	# Copying batlvl to /usr/bin
 	sudo cp -vi batlvl /usr/bin/
 	# Copying c2f to /usr/bin
