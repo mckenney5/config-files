@@ -12,7 +12,6 @@
 #define LOW_COLOR "red"
 #define MED_COLOR "yellow"
 #define GOOD_COLOR "green"
-#define NORMAL_COLOR "white"
 
 int main(){
 	size_t i, l=0, nmembr=0;
@@ -39,17 +38,17 @@ int main(){
 	for(i=0; i < nmembr; i++){ //display the data
 		if(batlvl[i] > 100) batlvl[i] /= 10; //fixes extra zero if bat0 is at 100%
 		if(batlvl[i] <= LOW && i+1 != nmembr) //if the battery is low and theres another battery
-			printf("#[fg=%s]%d%s #[fg=%s]", LOW_COLOR, batlvl[i], "%!", NORMAL_COLOR);
+			printf("#[fg=%s]%d%s #[default]", LOW_COLOR, batlvl[i], "%!");
 		else if(batlvl[i] <= LOW && i+1 == nmembr) //if the battery is low
-			printf("#[fg=%s]%d%s#[fg=%s]", LOW_COLOR, batlvl[i], "%!", NORMAL_COLOR);
+			printf("#[fg=%s]%d%s#[default]", LOW_COLOR, batlvl[i], "%!");
 		else if(batlvl[i] <= MED && i+1 != nmembr) //if the battery is medium and theres another battery
-			printf("#[fg=%s]%d%s #[fg=%s]", MED_COLOR, batlvl[i], "%", NORMAL_COLOR);
+			printf("#[fg=%s]%d%s #[default]", MED_COLOR, batlvl[i], "%");
 		else if(batlvl[i] <= MED && i+1 == nmembr) //if the battery is medium
-			printf("#[fg=%s]%d%s#[fg=%s]", MED_COLOR, batlvl[i], "%", NORMAL_COLOR);
+			printf("#[fg=%s]%d%s#[default]", MED_COLOR, batlvl[i], "%");
 		else if(i+1 == nmembr)
-			printf("#[fg=%s]%d%s#[fg=%s]", GOOD_COLOR, batlvl[i], "%", NORMAL_COLOR);
+			printf("#[fg=%s]%d%s#[default]", GOOD_COLOR, batlvl[i], "%");
 		else
-			printf("#[fg=%s]%d%s #[fg=%s]", GOOD_COLOR, batlvl[i], "%", NORMAL_COLOR);
+			printf("#[fg=%s]%d%s #[default]", GOOD_COLOR, batlvl[i], "%");
 	}
 	return 0;
 }
