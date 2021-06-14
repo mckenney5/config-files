@@ -1,10 +1,10 @@
 #!/bin/bash
-# checks if we have an IP assigned to us
+# checks if we have an IP assigned to us for tmux
 
 if [ -z $(for i in `ip r`; do echo $i; done | grep -A 1 src | tail -n1) ]
 then
-	printf "#[fg=red]OFF"
+	printf "#[fg=red]OFFLINE"
 else
-	printf "#[fg=green]ON"
+	printf "#[fg=green]ONLINE"
 fi
 
