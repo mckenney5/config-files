@@ -18,5 +18,4 @@ Config-Files
 	These config files are released as open domian (see LICENSE) except for below:
 	[Note] The .bashrc file contains code that was auto-generated from
 		Debian GNU/Linux's bash.
-	[Note] The font/webawesome* font is owned by its respective owner (who is not me)
 

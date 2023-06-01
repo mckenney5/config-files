@@ -14,9 +14,6 @@ install: batlvl search3
 	cp -vi src/tmux.conf ~/.tmux.conf
 	cp -vi src/vimrc ~/.vimrc
 	cp -vi src/bash_alias ~/.bash_alias
-	# Copying fonts
-	mkdir -p ~/.fonts
-	cp -vi src/fonts/* ~/.fonts/
 	# Copying batlvl to /usr/bin
 	sudo cp -vi batlvl /usr/bin/
 	# Copying search3 to /usr/bin
@@ -34,13 +31,6 @@ reinstall: batlvl search3
 	cp -vui src/tmux.conf ~/.tmux.conf
 	cp -vui src/vimrc ~/.vimrc
 	cp -vui src/bash_alias ~/.bash_alias
-	# Copying fonts
-	mkdir -p ~/.fonts
-	cp -vui src/fonts/* ~/.fonts/
-	# Copying i3 conf files
-	mkdir -p ~/.i3
-	cp -vui src/i3/* ~/.i3/
-	cd ..
 	# Copying batlvl to /usr/bin
 	sudo cp -vui batlvl /usr/bin/
 	# Copying search3 to /usr/bin
